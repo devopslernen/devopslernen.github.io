@@ -33,6 +33,7 @@
 </head>
 
 <body>
+
   <!-- Parallax Pixel Background Animation -->
   <section class="animated-background">
     <div id="stars1"></div>
@@ -64,6 +65,45 @@
   </div>
 
   <div id="links">
+    <!-- Newsletter Signup Form -->
+    <div class="newsletter-box">
+      <h3 class="newsletter-title">Abonniere den Newsletter für hilfreiche Tipps und Sonderangebote</h3>
+      <form action="https://app.kit.com/forms/9065892/subscriptions" method="post" data-sv-form="9065892"
+        data-uid="71cdc5e1ab" data-format="inline" data-version="5" class="newsletter-form" id="newsletter-form">
+        <input type="email" name="email_address" placeholder="Deine E-Mail-Adresse" required class="newsletter-input">
+        <button type="submit" class="newsletter-button">Abonnieren</button>
+      </form>
+      <div class="newsletter-success" id="newsletter-success">
+        Bitte <span style="color: #ff4444; font-weight: bold; font-size: 15pt;">überprüfe deinen Spamordner sowie
+          Posteingang</span> und bestätige dein Abonnement. Erfolgreich angemeldet!
+      </div>
+      <p class="newsletter-disclaimer">Abmeldung jederzeit möglich.</p>
+    </div>
+    <script>
+      document.getElementById('newsletter-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+        var form = this;
+        var formData = new FormData(form);
+
+        fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        }).then(function (response) {
+          if (response.ok) {
+            form.style.display = 'none';
+            document.getElementById('newsletter-success').classList.add('show');
+          }
+        }).catch(function (error) {
+          // Fallback: submit normally if fetch fails
+          form.submit();
+        });
+      });
+    </script>
+    <!-- End Newsletter Signup Form -->
+
     <a class="link"
       href="https://www.udemy.com/course/linux-fur-einsteiger-ubuntu-linux-mint-shell-grundlagen/?referralCode=69A8B801A3E6183CA13E"
       target="_blank" style="background-image: url('img/linux-free.jpg');">
