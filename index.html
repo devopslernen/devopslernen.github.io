@@ -1,125 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>devopslernen</title>
-    <!-- Favicon -->
-    <link rel="icon" href="img/icon.png" type="image/x-icon" />
-    <!-- Font Awesome icons -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-    <!-- Core theme CSS -->
-    <link rel="stylesheet" href="style.css">
-  </head>
 
-  <body>
-    <!-- Parallax Pixel Background Animation -->
-    <section class="animated-background">
-      <div id="stars1"></div>
-      <div id="stars2"></div>
-      <div id="stars3"></div>
-    </section>
-    <!-- End of Parallax Pixel Background Animation -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>devopslernen</title>
+  <!-- Favicon -->
+  <link rel="icon" href="img/icon.png" type="image/x-icon" />
+  <!-- Font Awesome icons -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+  <!-- Core theme CSS -->
+  <link rel="stylesheet" href="style.css">
+  <!-- GoatCounter Tracking -->
+  <script data-goatcounter="https://devopslernen.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  <script>
+    // Automatic Click Tracking for Linktree Links
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('.link').forEach(function (link) {
+        link.addEventListener('click', function () {
+          var label = this.innerText.trim().split('\n')[0]; // Use first line of text as label
+          if (window.goatcounter && window.goatcounter.count) {
+            window.goatcounter.count({
+              path: label.replace(/\s+/g, '-').toLowerCase(),
+              title: 'Click: ' + label,
+              event: true
+            });
+          }
+        });
+      });
+    });
+  </script>
+</head>
 
-    <a id="profilePicture" href="#popup">
-      <img src="img/icon.png" alt="Profile Picture">
-    </a>
+<body>
+  <!-- Parallax Pixel Background Animation -->
+  <section class="animated-background">
+    <div id="stars1"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
+  </section>
+  <!-- End of Parallax Pixel Background Animation -->
 
-    <div class="overlay" id="popup">
-      <div class="popup">
-        <div class="popup-photo">
-          <a href="img/icon.png" target="_blank">
-            <img src="img/icon.png" alt="Profile Picture">
-          </a>
-        </div>
-        <div class="popup-quote">
-          IT-Kurse zum Bestpreis
-        </div>
-        <a class="popup-close" onclick="history.back()">&times;</a>
+  <a id="profilePicture" href="#popup">
+    <img src="img/icon.png" alt="Profile Picture">
+  </a>
+
+  <div class="overlay" id="popup">
+    <div class="popup">
+      <div class="popup-photo">
+        <a href="img/icon.png" target="_blank">
+          <img src="img/icon.png" alt="Profile Picture">
+        </a>
       </div>
+      <div class="popup-quote">
+        IT-Kurse zum Bestpreis
+      </div>
+      <a class="popup-close" onclick="history.back()">&times;</a>
     </div>
+  </div>
 
-    <div id="userName">
-      devopslernen
-    </div>
+  <div id="userName">
+    devopslernen
+  </div>
 
-    <div id="links">
-      <a class="link" href="https://www.udemy.com/course/linux-fur-einsteiger-ubuntu-linux-mint-shell-grundlagen/?referralCode=69A8B801A3E6183CA13E" target="_blank" style="background-image: url('img/linux-free.jpg');">
-        Linux für Einsteiger: Ubuntu, Linux Mint & Shell-Grundlagen
-        <br>GRATIS
-      </a>
-      <a class="link" href="https://www.udemy.com/course/powershell-praxiskurs/?couponCode=LINK-2026-01" target="_blank" style="background-image: url('img/powershell-de-sq.jpg');">
-        PowerShell Praxiskurs – Vom Einsteiger zum Profi
-        <br>nur 12,99
-      </a>
-      <a class="link" href="https://www.udemy.com/course/windows-server-2025-praxiskurs/?couponCode=LINK-2026-01" target="_blank" style="background-image: url('img/server2025-de.jpg');">
-        Windows Server 2025 – Einsteigerfreundlicher Praxiskurs
-        <br>nur 12,99
-      </a>
-      <a class="link" href="https://www.udemy.com/course/microsoft-hyper-v-unter-windows-server-2025-windows-11/?couponCode=LINK-2026-01" target="_blank" style="background-image: url('img/hyper-v-de.jpg');">
-        Microsoft Hyper-V unter Windows Server 2025 & Windows 11
-        <br>nur 12,99
-      </a>
-      <a class="link" href="https://www.udemy.com/course/microsoft-azure-der-schnelle-und-praxisnahe-einstieg/?couponCode=LINK-2026-01" target="_blank" style="background-image: url('img/azure.jpg');">
-        Microsoft Azure Praxiskurs 2025: Vom Einsteiger zum Profi
-        <br>nur 12,99
-      </a>
-      <a class="link" href="https://www.udemy.com/course/next-level-ai-ki-fur-coding-scripting-administration/?couponCode=LINK-2026-01" target="_blank" style="background-image: url('img/ai.jpg');">
-        Next-Level AI (KI) für Coding, Scripting & Administration
-        <br>nur 12,99
-      </a>
-      <a class="link" href="https://www.udemy.com/course/ansible-fur-fortgeschrittene-praxiskurs/?couponCode=LINK-2026-01" target="_blank" style="background-image: url('img/ansible-advanced.jpg');">
-        Ansible für Fortgeschrittene - Praxiskurs
-        <br>nur 12,99
-      </a>
-      <a class="link" href="https://www.udemy.com/course/jira-confluence-atlassian-praxiskurs/?couponCode=LINK-2026-01" target="_blank" style="background-image: url('img/atlassian.jpg');">
-        Jira & Confluence - Atlassian Praxiskurs
-        <br>nur 12,99
-      </a>
-      <a class="link" href="https://www.udemy.com/course/fortinet-fortigate-firewall-praxiskurs/?couponCode=LINK-2026-01" target="_blank" style="background-image: url('img/fortinet.png');">
-        Fortinet FortiGate: Firewall Praxiskurs
-        <br>nur 12,99
-      </a>
-      <a class="link" href="https://www.udemy.com/course/proxmox-praxiskurs/?couponCode=LINK-2026-01" target="_blank" style="background-image: url('img/proxmox.jpg');">
-        Proxmox VE 8 Praxiskurs für Virtualisierung
-        <br>nur 12,99
-      </a>
-      <a class="link" href="https://www.udemy.com/course/proxmox-ve-virtualisierung-fur-fortgeschrittene/?couponCode=LINK-2026-01" target="_blank" style="background-image: url('img/proxmox-advanced.png');">
-        Proxmox VE 8 - Virtualisierung für Fortgeschrittene
-        <br>nur 12,99
-      </a>
-      <a class="link" href="https://www.udemy.com/course/ansible-praxiskurs/?couponCode=LINK-2026-01" target="_blank" style="background-image: url('img/ansible.jpg');">
-        Ansible: IT-Automatisierung für Beginner
-        <br>nur 12,99
-      </a>
-      <a class="link" href="https://www.udemy.com/course/ubuntu-linux-cli-praxiskurs/?couponCode=LINK-2026-01" target="_blank" style="background-image: url('img/ubuntu.jpg');">
-        Ubuntu Linux: Command Line für Beginner - Praxiskurs
-        <br>nur 12,99
-      </a>
-      <a class="link" href="https://www.udemy.com/course/git-praxiskurs/?couponCode=LINK-2026-01" target="_blank" style="background-image: url('img/git.jpg');">
-        Git/Versionskontrolle: Beginnerfreundlicher Praxiskurs
-        <br>nur 12,99
-      </a>
-      <a class="link" href="https://www.udemy.com/course/ansible-awx-praxiskurs/?couponCode=LINK-2026-01" target="_blank" style="background-image: url('img/awx.jpg');">
-        Ansible AWX Praxiskurs
-        <br>nur 12,99
-      </a>
-      <a class="link" href="https://www.udemy.com/course/docker-fur-beginner-einsteigerfreundlicher-praxiskurs-2023/?couponCode=LINK-2026-01" target="_blank" style="background-image: url('img/docker.jpg');">
-        Docker Container: Einsteigerfreundlicher Praxiskurs
-        <br>nur 12,99
-      </a>
-      <a class="link" href="https://www.udemy.com/course/debian-praxiskurs/?couponCode=LINK-2026-01" target="_blank" style="background-image: url('img/debian.jpg');">
-        Debian Linux 12: Command Line für Einsteiger - Praxiskurs
-        <br>nur 12,99
-      </a>
-      <a class="link" href="https://www.udemy.com/course/rhel-praxiskurs/?couponCode=LINK-2026-01" target="_blank" style="background-image: url('img/rhel.jpg');">
-        Red Hat Enterprise Linux 9: CLI Praxiskurs für Anfänger
-        <br>nur 12,99
-      </a>
-    </div>
+  <div id="links">
+    <a class="link"
+      href="https://www.udemy.com/course/linux-fur-einsteiger-ubuntu-linux-mint-shell-grundlagen/?referralCode=69A8B801A3E6183CA13E"
+      target="_blank" style="background-image: url('img/linux-free.jpg');">
+      Linux für Einsteiger: Ubuntu, Linux Mint & Shell-Grundlagen
+      <br>GRATIS
+    </a>
+    <a class="link" href="https://www.udemy.com/course/powershell-praxiskurs/?couponCode=LINK-2026-01" target="_blank"
+      style="background-image: url('img/powershell-de-sq.jpg');">
+      PowerShell Praxiskurs – Vom Einsteiger zum Profi
+      <br>nur 12,99
+    </a>
+    <a class="link" href="https://www.udemy.com/course/windows-server-2025-praxiskurs/?couponCode=LINK-2026-01"
+      target="_blank" style="background-image: url('img/server2025-de.jpg');">
+      Windows Server 2025 – Einsteigerfreundlicher Praxiskurs
+      <br>nur 12,99
+    </a>
+    <a class="link"
+      href="https://www.udemy.com/course/microsoft-hyper-v-unter-windows-server-2025-windows-11/?couponCode=LINK-2026-01"
+      target="_blank" style="background-image: url('img/hyper-v-de.jpg');">
+      Microsoft Hyper-V unter Windows Server 2025 & Windows 11
+      <br>nur 12,99
+    </a>
+    <a class="link"
+      href="https://www.udemy.com/course/microsoft-azure-der-schnelle-und-praxisnahe-einstieg/?couponCode=LINK-2026-01"
+      target="_blank" style="background-image: url('img/azure.jpg');">
+      Microsoft Azure Praxiskurs 2025: Vom Einsteiger zum Profi
+      <br>nur 12,99
+    </a>
+    <a class="link"
+      href="https://www.udemy.com/course/next-level-ai-ki-fur-coding-scripting-administration/?couponCode=LINK-2026-01"
+      target="_blank" style="background-image: url('img/ai.jpg');">
+      Next-Level AI (KI) für Coding, Scripting & Administration
+      <br>nur 12,99
+    </a>
+    <a class="link" href="https://www.udemy.com/course/ansible-fur-fortgeschrittene-praxiskurs/?couponCode=LINK-2026-01"
+      target="_blank" style="background-image: url('img/ansible-advanced.jpg');">
+      Ansible für Fortgeschrittene - Praxiskurs
+      <br>nur 12,99
+    </a>
+    <a class="link" href="https://www.udemy.com/course/jira-confluence-atlassian-praxiskurs/?couponCode=LINK-2026-01"
+      target="_blank" style="background-image: url('img/atlassian.jpg');">
+      Jira & Confluence - Atlassian Praxiskurs
+      <br>nur 12,99
+    </a>
+    <a class="link" href="https://www.udemy.com/course/fortinet-fortigate-firewall-praxiskurs/?couponCode=LINK-2026-01"
+      target="_blank" style="background-image: url('img/fortinet.png');">
+      Fortinet FortiGate: Firewall Praxiskurs
+      <br>nur 12,99
+    </a>
+    <a class="link" href="https://www.udemy.com/course/proxmox-praxiskurs/?couponCode=LINK-2026-01" target="_blank"
+      style="background-image: url('img/proxmox.jpg');">
+      Proxmox VE 8 Praxiskurs für Virtualisierung
+      <br>nur 12,99
+    </a>
+    <a class="link"
+      href="https://www.udemy.com/course/proxmox-ve-virtualisierung-fur-fortgeschrittene/?couponCode=LINK-2026-01"
+      target="_blank" style="background-image: url('img/proxmox-advanced.png');">
+      Proxmox VE 8 - Virtualisierung für Fortgeschrittene
+      <br>nur 12,99
+    </a>
+    <a class="link" href="https://www.udemy.com/course/ansible-praxiskurs/?couponCode=LINK-2026-01" target="_blank"
+      style="background-image: url('img/ansible.jpg');">
+      Ansible: IT-Automatisierung für Beginner
+      <br>nur 12,99
+    </a>
+    <a class="link" href="https://www.udemy.com/course/ubuntu-linux-cli-praxiskurs/?couponCode=LINK-2026-01"
+      target="_blank" style="background-image: url('img/ubuntu.jpg');">
+      Ubuntu Linux: Command Line für Beginner - Praxiskurs
+      <br>nur 12,99
+    </a>
+    <a class="link" href="https://www.udemy.com/course/git-praxiskurs/?couponCode=LINK-2026-01" target="_blank"
+      style="background-image: url('img/git.jpg');">
+      Git/Versionskontrolle: Beginnerfreundlicher Praxiskurs
+      <br>nur 12,99
+    </a>
+    <a class="link" href="https://www.udemy.com/course/ansible-awx-praxiskurs/?couponCode=LINK-2026-01" target="_blank"
+      style="background-image: url('img/awx.jpg');">
+      Ansible AWX Praxiskurs
+      <br>nur 12,99
+    </a>
+    <a class="link"
+      href="https://www.udemy.com/course/docker-fur-beginner-einsteigerfreundlicher-praxiskurs-2023/?couponCode=LINK-2026-01"
+      target="_blank" style="background-image: url('img/docker.jpg');">
+      Docker Container: Einsteigerfreundlicher Praxiskurs
+      <br>nur 12,99
+    </a>
+    <a class="link" href="https://www.udemy.com/course/debian-praxiskurs/?couponCode=LINK-2026-01" target="_blank"
+      style="background-image: url('img/debian.jpg');">
+      Debian Linux 12: Command Line für Einsteiger - Praxiskurs
+      <br>nur 12,99
+    </a>
+    <a class="link" href="https://www.udemy.com/course/rhel-praxiskurs/?couponCode=LINK-2026-01" target="_blank"
+      style="background-image: url('img/rhel.jpg');">
+      Red Hat Enterprise Linux 9: CLI Praxiskurs für Anfänger
+      <br>nur 12,99
+    </a>
+  </div>
 
-    <div id="hashtag">
-      IT-Kurse zum Vorzugspreis
-    </div>
-  </body>
+  <div id="hashtag">
+    IT-Kurse zum Vorzugspreis
+  </div>
+</body>
+
 </html>
