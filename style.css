@@ -74,6 +74,12 @@ body {
     background-size: 60px auto;
 }
 
+.link-left {
+    display: block;
+    text-align: left;
+    font-weight: bold;
+}
+
 @media screen and (max-width: 600px) {
     .link {
         padding-left: 100px;
