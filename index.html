@@ -44,12 +44,14 @@
   function acceptTracking() {
     localStorage.setItem("trackingConsent", "accepted");
     document.getElementById("consent-banner").style.display = "none";
+    document.body.style.overflow = "auto";
     loadGoatCounter();
   }
 
   function declineTracking() {
     localStorage.setItem("trackingConsent", "declined");
     document.getElementById("consent-banner").style.display = "none";
+    document.body.style.overflow = "auto";
   }
 
   window.acceptTracking = acceptTracking;
@@ -61,7 +63,8 @@
     if (consent === "accepted") {
       loadGoatCounter();
     } else if (!consent) {
-      document.getElementById("consent-banner").style.display = "flex";
+      document.getElementById("consent-overlay").style.display = "flex";
+      document.body.style.overflow = "hidden";
     }
   });
 
@@ -70,21 +73,25 @@
 </head>
 
 <body>
-  <div id="consent-banner" class="consent-banner">
-    <div class="consent-text">
-      Wir verwenden GoatCounter, um Seitenaufrufe und Klicks zu analysieren.
-      Dies hilft uns, relevante Inhalte anzubieten.
-    </div>
+  <div id="consent-overlay" class="consent-overlay">
+    <div class="consent-modal">
+      <h3>Tracking & Analyse</h3>
+      <p>
+        Wir verwenden GoatCounter, um Seitenaufrufe und Klicks zu analysieren.
+        Dies hilft uns, unsere IT-Kurse und Angebote zu optimieren.
+      </p>
   
-    <div class="consent-buttons">
-      <button class="consent-accept" onclick="acceptTracking()">
-        Akzeptieren
-      </button>
-      <button class="consent-decline" onclick="declineTracking()">
-        Ablehnen
-      </button>
+      <div class="consent-buttons">
+        <button class="consent-accept" onclick="acceptTracking()">
+          Akzeptieren
+        </button>
+        <button class="consent-decline" onclick="declineTracking()">
+          Ablehnen
+        </button>
+      </div>
     </div>
   </div>
+  
   <!-- Parallax Pixel Background Animation -->
   <section class="animated-background">
     <div id="stars1"></div>
