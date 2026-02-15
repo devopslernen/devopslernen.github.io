@@ -230,6 +230,28 @@
 <script>
 (function () {
 
+  function openConsentSettings() {
+    const overlay = document.getElementById("consent-overlay");
+    overlay.style.display = "flex";
+    document.body.classList.add("no-scroll");
+  }
+  
+  function revokeTracking() {
+    localStorage.removeItem("trackingConsent");
+  
+    // GoatCounter stoppen
+    window.goatcounter = undefined;
+  
+    const existingScript = document.querySelector(
+      'script[data-goatcounter]'
+    );
+    if (existingScript) {
+      existingScript.remove();
+    }
+  
+    openConsentSettings();
+  }
+  
   function loadGoatCounter() {
     if (window.goatLoaded) return;
     window.goatLoaded = true;
@@ -289,7 +311,12 @@
   <a href="dataprotection.html" target="_blank" class="legal-button">
     Datenschutzerklärung
   </a>
+
+  <button onclick="openConsentSettings()" class="legal-button">
+    Tracking-Einstellungen
+  </button>
 </div>
+
 </body>
 
 </html>
