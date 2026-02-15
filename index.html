@@ -230,11 +230,18 @@
 <script>
 (function () {
 
-  function openConsentSettingsLocal() {
-    const overlay = document.getElementById("consent-overlay");
-    overlay.style.display = "flex";
-    document.body.classList.add("no-scroll");
-  }
+function openConsentSettingsLocal() {
+  const overlay = document.getElementById("consent-overlay");
+  overlay.style.display = "flex";
+  document.body.classList.add("no-scroll");
+
+  // Automatisch ins Zentrum scrollen
+  overlay.scrollIntoView({ behavior: "smooth", block: "center" });
+}
+
+// Globale Funktion
+window.openConsentSettings = openConsentSettingsLocal;
+
   
   function revokeTrackingLocal() {
     localStorage.removeItem("trackingConsent");
