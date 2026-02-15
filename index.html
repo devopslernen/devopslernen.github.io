@@ -11,78 +11,26 @@
   <link rel="stylesheet" href="all.css">
   <!-- Core theme CSS -->
   <link rel="stylesheet" href="style.css">
-<script>
-(function () {
 
-  function loadGoatCounter() {
-    if (window.goatLoaded) return;
-    window.goatLoaded = true;
-
-    var gc = document.createElement('script');
-    gc.async = true;
-    gc.src = "https://gc.zgo.at/count.js";
-    gc.setAttribute("data-goatcounter", "https://devopslernen.goatcounter.com/count");
-    document.head.appendChild(gc);
-
-    // Klick-Tracking aktivieren
-    document.addEventListener('DOMContentLoaded', function () {
-      document.querySelectorAll('.link').forEach(function (link) {
-        link.addEventListener('click', function () {
-          if (window.goatcounter && window.goatcounter.count) {
-            var label = this.innerText.trim().split('\n')[0];
-            window.goatcounter.count({
-              path: label.replace(/\s+/g, '-').toLowerCase(),
-              title: 'Click: ' + label,
-              event: true
-            });
-          }
-        });
-      });
-    });
-  }
-
-  function acceptTracking() {
-    localStorage.setItem("trackingConsent", "accepted");
-    const overlay = document.getElementById("consent-overlay");
-    overlay.style.display = "none";
-    document.body.classList.remove("no-scroll");
-    loadGoatCounter();
-  }
-  
-  function declineTracking() {
-    localStorage.setItem("trackingConsent", "declined");
-    const overlay = document.getElementById("consent-overlay");
-    overlay.style.display = "none";
-    document.body.classList.remove("no-scroll");
-  }
-
-  window.acceptTracking = acceptTracking;
-  window.declineTracking = declineTracking;
-
-})();
-</script>
 </head>
 
 <body>
-  <div id="consent-overlay" class="consent-overlay">
-    <div class="consent-modal">
-      <h3>Tracking & Analyse</h3>
-      <p>
-        Wir verwenden GoatCounter, um Seitenaufrufe und Klicks zu analysieren.
-        Dies hilft uns, unsere IT-Kurse und Angebote zu optimieren.
-      </p>
-  
-      <div class="consent-buttons">
-        <button class="consent-accept" onclick="acceptTracking()">
-          Akzeptieren
-        </button>
-        <button class="consent-decline" onclick="declineTracking()">
-          Ablehnen
-        </button>
-      </div>
+<div id="consent-overlay" class="consent-overlay">
+  <div class="consent-modal">
+    <h3>Tracking & Analyse</h3>
+    <p>
+      Wir verwenden GoatCounter, um Seitenaufrufe und Klicks zu analysieren.
+      Dies hilft uns, unsere IT-Kurse und Angebote zu optimieren.
+    </p>
+
+    <div class="consent-buttons">
+      <button onclick="acceptTracking()">Akzeptieren</button>
+      <button onclick="declineTracking()">Ablehnen</button>
     </div>
   </div>
-  
+</div>
+
+
   <!-- Parallax Pixel Background Animation -->
   <section class="animated-background">
     <div id="stars1"></div>
@@ -280,6 +228,27 @@
     IT-Kurse zum Vorzugspreis
   </div>
   <script>
+  function loadGoatCounter() {
+    const script = document.createElement("script");
+    script.src = "//gc.zgo.at/count.js";
+    script.async = true;
+    script.setAttribute("data-goatcounter", "https://DEINE-ID.goatcounter.com/count");
+    document.body.appendChild(script);
+  }
+  
+  function acceptTracking() {
+    localStorage.setItem("trackingConsent", "accepted");
+    document.getElementById("consent-overlay").style.display = "none";
+    document.body.classList.remove("no-scroll");
+    loadGoatCounter();
+  }
+  
+  function declineTracking() {
+    localStorage.setItem("trackingConsent", "declined");
+    document.getElementById("consent-overlay").style.display = "none";
+    document.body.classList.remove("no-scroll");
+  }
+  
   document.addEventListener("DOMContentLoaded", function () {
     const consent = localStorage.getItem("trackingConsent");
   
