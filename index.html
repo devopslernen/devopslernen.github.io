@@ -230,28 +230,20 @@
 <script>
 (function () {
 
-  function openConsentSettings() {
+  function openConsentSettingsLocal() {
     const overlay = document.getElementById("consent-overlay");
     overlay.style.display = "flex";
     document.body.classList.add("no-scroll");
   }
   
-  function revokeTracking() {
+  function revokeTrackingLocal() {
     localStorage.removeItem("trackingConsent");
-  
-    // GoatCounter stoppen
     window.goatcounter = undefined;
-  
-    const existingScript = document.querySelector(
-      'script[data-goatcounter]'
-    );
-    if (existingScript) {
-      existingScript.remove();
-    }
-  
-    openConsentSettings();
+    const existingScript = document.querySelector('script[data-goatcounter]');
+    if (existingScript) existingScript.remove();
+    openConsentSettingsLocal();
   }
-  
+
   function loadGoatCounter() {
     if (window.goatLoaded) return;
     window.goatLoaded = true;
@@ -259,10 +251,7 @@
     const script = document.createElement("script");
     script.src = "//gc.zgo.at/count.js";
     script.async = true;
-    script.setAttribute(
-      "data-goatcounter",
-      "https://devopslernen.goatcounter.com/count"
-    );
+    script.setAttribute("data-goatcounter", "https://devopslernen.goatcounter.com/count");
     document.body.appendChild(script);
   }
 
@@ -272,12 +261,14 @@
     document.body.classList.remove("no-scroll");
   }
 
+  // Globale Funktionen bereitstellen
+  window.openConsentSettings = openConsentSettingsLocal;
+  window.revokeTracking = revokeTrackingLocal;
   window.acceptTracking = function () {
     localStorage.setItem("trackingConsent", "accepted");
     hideBanner();
     loadGoatCounter();
   };
-
   window.declineTracking = function () {
     localStorage.setItem("trackingConsent", "declined");
     hideBanner();
@@ -300,12 +291,13 @@
       return;
     }
 
-    // KEINE Entscheidung → Banner zeigen
+    // Keine Entscheidung → Banner zeigen
     overlay.style.display = "flex";
     document.body.classList.add("no-scroll");
   });
 
 })();
+
 </script>
 <div class="footer-legal">
   <a href="dataprotection.html" target="_blank" class="legal-button">
