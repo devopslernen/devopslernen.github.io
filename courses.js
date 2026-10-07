@@ -18,6 +18,9 @@ var SHOP = {
   currency: "EUR",
   locale: "de-DE",
 
+  // Udemy-Kennzahlen fuer den Kopfbereich (von der Udemy-Statistikseite)
+  stats: { rating: 4.49, students: 12439, reviews: 2218 },
+
   text: {
     all: "Alle",
     featured: "Kostenlos starten",
@@ -26,7 +29,10 @@ var SHOP = {
     cta: "Zum Kurs →",
     ctaFree: "Gratis ansehen →",
     course: "Kurs",
-    courses: "Kurse"
+    courses: "Kurse",
+    rating: "Bewertung",
+    students: "Lernende",
+    reviews: "Rezensionen"
   },
 
   categories: [
