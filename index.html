@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
 <head>
   <meta charset="UTF-8">
@@ -15,18 +15,14 @@
 </head>
 
 <body>
-<div id="consent-overlay" class="consent-overlay">
-  <div class="consent-modal">
-    <h3>Tracking & Analyse</h3>
-    <p>
-      Wir verwenden GoatCounter, um Seitenaufrufe und Klicks zu analysieren.
-      Dies hilft uns, unsere IT-Kurse und Angebote zu optimieren.
-    </p>
-
-    <div class="consent-buttons">
-      <button class="consent-accept" onclick="acceptTracking()">Akzeptieren</button>
-      <button class="consent-decline" onclick="declineTracking()">Ablehnen</button>
-    </div>
+<div id="consent-bar" class="consent-bar" role="dialog" aria-label="Tracking-Einstellungen" hidden>
+  <p class="consent-text">
+    Wir möchten mit GoatCounter (ohne Cookies) Seitenaufrufe und Klicks zählen, um unsere Kurse zu verbessern.
+    <a href="dataprotection.html" target="_blank">Datenschutz</a>
+  </p>
+  <div class="consent-buttons">
+    <button class="consent-accept" onclick="acceptTracking()">Akzeptieren</button>
+    <button class="consent-decline" onclick="declineTracking()">Ablehnen</button>
   </div>
 </div>
 
@@ -101,247 +97,58 @@
     </script>
     <!-- End Newsletter Signup Form -->
 
-    <a class="link"
-      href="https://www.udemy.com/course/linux-fur-einsteiger-ubuntu-linux-mint-shell-grundlagen/?referralCode=69A8B801A3E6183CA13E"
-      target="_blank" style="background-image: url('img/linux-free.jpg');">
-      <span class="link-left">HIER klicken:</span>
-      Linux für Einsteiger: Ubuntu, Linux Mint & Shell-Grundlagen
-      <br>GRATIS
-    </a>
-    
-    <a class="link" href="https://www.udemy.com/course/openai-codex-agentic-engineering-next-level-ki-entwicklung/?couponCode=LINK-2026-09" target="_blank"
-      style="background-image: url('img/codex-thumbnail-de-sq.png');">
-      <span class="link-left">HIER klicken:</span>
-      Codex & Agentic Engineering: Next-Level KI-Entwicklung
-      <br>nur 12,99
-    </a>
-    <a class="link" href="https://www.udemy.com/course/linux-security-hardening-auditing-praxiskurs/?couponCode=LINK-2026-09" target="_blank"
-      style="background-image: url('img/thumb-tux-security-1-lock-orange-sq.png');">
-      <span class="link-left">HIER klicken:</span>
-      Linux Security Hardening & Auditing: Praxiskurs
-      <br>nur 12,99
-    </a>
-    <a class="link" href="https://www.udemy.com/course/next-level-linux-systemadministration-mit-claude-code/?couponCode=LINK-2026-09" target="_blank"
-      style="background-image: url('img/thumb-tux-auto-dark-sq.png');">
-      <span class="link-left">HIER klicken:</span>
-      Next-Level Linux Systemadministration mit Claude Code
-      <br>nur 12,99
-    </a>
-    <a class="link" href="https://www.udemy.com/course/next-level-windows-systemadministration-mit-claude-code/?couponCode=LINK-2026-09" target="_blank"
-      style="background-image: url('img/claude-windows-admin.jpg');">
-      <span class="link-left">HIER klicken:</span>
-      Next-Level Windows Systemadministration mit Claude Code
-      <br>nur 12,99
-    </a>
-    <a class="link" href="https://www.udemy.com/course/next-level-systemadministration-devops-mit-claude-code/?couponCode=LINK-2026-09" target="_blank"
-      style="background-image: url('img/claude-sysadmin.jpg');">
-      <span class="link-left">HIER klicken:</span>
-      Next-Level Systemadministration & DevOps mit Claude Code
-      <br>nur 12,99
-    </a>
-    <a class="link" href="https://www.udemy.com/course/claude-code-agentic-engineering-next-level-ki-entwicklung/?couponCode=LINK-2026-09" target="_blank"
-      style="background-image: url('img/claude-code.jpg');">
-      <span class="link-left">HIER klicken:</span>
-      Claude Code & Agentic Engineering: Next-Level KI-Entwicklung
-      <br>nur 12,99
-    </a>
-    <a class="link" href="https://www.udemy.com/course/powershell-praxiskurs/?couponCode=LINK-2026-09" target="_blank"
-      style="background-image: url('img/powershell-de-sq.jpg');">
-      <span class="link-left">HIER klicken:</span>
-      PowerShell Praxiskurs – Vom Einsteiger zum Profi
-      <br>nur 12,99
-    </a>
-    <a class="link" href="https://www.udemy.com/course/windows-server-2025-praxiskurs/?couponCode=LINK-2026-09"
-      target="_blank" style="background-image: url('img/server2025-de.jpg');">
-      <span class="link-left">HIER klicken:</span>
-      Windows Server 2025 – Einsteigerfreundlicher Praxiskurs
-      <br>nur 12,99
-    </a>
-    <a class="link"
-      href="https://www.udemy.com/course/microsoft-hyper-v-unter-windows-server-2025-windows-11/?couponCode=LINK-2026-09"
-      target="_blank" style="background-image: url('img/hyper-v-de.jpg');">
-      <span class="link-left">HIER klicken:</span>
-      Microsoft Hyper-V unter Windows Server 2025 & Windows 11
-      <br>nur 12,99
-    </a>
-    <a class="link"
-      href="https://www.udemy.com/course/microsoft-azure-der-schnelle-und-praxisnahe-einstieg/?couponCode=LINK-2026-09"
-      target="_blank" style="background-image: url('img/azure.jpg');">
-      <span class="link-left">HIER klicken:</span>
-      Microsoft Azure Praxiskurs 2025: Vom Einsteiger zum Profi
-      <br>nur 12,99
-    </a>
-    <a class="link"
-      href="https://www.udemy.com/course/windows-server-masterclass/?couponCode=LINK-2026-09"
-      target="_blank" style="background-image: url('img/winserver-masterclass.jpg');">
-      <span class="link-left">HIER klicken:</span>
-      Windows Server Masterclass - Vom Einsteiger zum Experten
-      <br>nur 12,99
-    </a>
-    <a class="link"
-      href="https://www.udemy.com/course/next-level-ai-ki-fur-coding-scripting-administration/?couponCode=LINK-2026-09"
-      target="_blank" style="background-image: url('img/ai.jpg');">
-      <span class="link-left">HIER klicken:</span>
-      Next-Level AI (KI) für Coding, Scripting & Administration
-      <br>nur 12,99
-    </a>
-    <a class="link" href="https://www.udemy.com/course/ansible-fur-fortgeschrittene-praxiskurs/?couponCode=LINK-2026-09"
-      target="_blank" style="background-image: url('img/ansible-advanced.jpg');">
-      <span class="link-left">HIER klicken:</span>
-      Ansible für Fortgeschrittene - Praxiskurs
-      <br>nur 12,99
-    </a>
-    <a class="link" href="https://www.udemy.com/course/jira-confluence-atlassian-praxiskurs/?couponCode=LINK-2026-09"
-      target="_blank" style="background-image: url('img/atlassian.jpg');">
-      <span class="link-left">HIER klicken:</span>
-      Jira & Confluence - Atlassian Praxiskurs
-      <br>nur 12,99
-    </a>
-    <a class="link" href="https://www.udemy.com/course/fortinet-fortigate-firewall-praxiskurs/?couponCode=LINK-2026-09"
-      target="_blank" style="background-image: url('img/fortinet.png');">
-      <span class="link-left">HIER klicken:</span>
-      Fortinet FortiGate: Firewall Praxiskurs
-      <br>nur 12,99
-    </a>
-    <a class="link" href="https://www.udemy.com/course/proxmox-praxiskurs/?couponCode=LINK-2026-09" target="_blank"
-      style="background-image: url('img/proxmox.jpg');">
-      <span class="link-left">HIER klicken:</span>
-      Proxmox VE 8 Praxiskurs für Virtualisierung
-      <br>nur 12,99
-    </a>
-    <a class="link"
-      href="https://www.udemy.com/course/proxmox-ve-virtualisierung-fur-fortgeschrittene/?couponCode=LINK-2026-09"
-      target="_blank" style="background-image: url('img/proxmox-advanced.png');">
-      <span class="link-left">HIER klicken:</span>
-      Proxmox VE 8 - Virtualisierung für Fortgeschrittene
-      <br>nur 12,99
-    </a>
-    <a class="link" href="https://www.udemy.com/course/ansible-praxiskurs/?couponCode=LINK-2026-09" target="_blank"
-      style="background-image: url('img/ansible.jpg');">
-      <span class="link-left">HIER klicken:</span>
-      Ansible: IT-Automatisierung für Beginner
-      <br>nur 12,99
-    </a>
-    <a class="link" href="https://www.udemy.com/course/ubuntu-linux-cli-praxiskurs/?couponCode=LINK-2026-09"
-      target="_blank" style="background-image: url('img/ubuntu.jpg');">
-      <span class="link-left">HIER klicken:</span>
-      Ubuntu Linux: Command Line für Beginner - Praxiskurs
-      <br>nur 12,99
-    </a>
-    <a class="link" href="https://www.udemy.com/course/git-praxiskurs/?couponCode=LINK-2026-09" target="_blank"
-      style="background-image: url('img/git.jpg');">
-      <span class="link-left">HIER klicken:</span>
-      Git/Versionskontrolle: Beginnerfreundlicher Praxiskurs
-      <br>nur 12,99
-    </a>
-    <a class="link" href="https://www.udemy.com/course/ansible-awx-praxiskurs/?couponCode=LINK-2026-09" target="_blank"
-      style="background-image: url('img/awx.jpg');">
-      <span class="link-left">HIER klicken:</span>
-      Ansible AWX Praxiskurs
-      <br>nur 12,99
-    </a>
-    <a class="link"
-      href="https://www.udemy.com/course/docker-fur-beginner-einsteigerfreundlicher-praxiskurs-2023/?couponCode=LINK-2026-09"
-      target="_blank" style="background-image: url('img/docker.jpg');">
-      <span class="link-left">HIER klicken:</span>
-      Docker Container: Einsteigerfreundlicher Praxiskurs
-      <br>nur 12,99
-    </a>
-    <a class="link" href="https://www.udemy.com/course/debian-praxiskurs/?couponCode=LINK-2026-09" target="_blank"
-      style="background-image: url('img/debian.jpg');">
-      <span class="link-left">HIER klicken:</span>
-      Debian Linux 12: Command Line für Einsteiger - Praxiskurs
-      <br>nur 12,99
-    </a>
-    <a class="link" href="https://www.udemy.com/course/rhel-praxiskurs/?couponCode=LINK-2026-09" target="_blank"
-      style="background-image: url('img/rhel.jpg');">
-      <span class="link-left">HIER klicken:</span>
-      Red Hat Enterprise Linux 9: CLI Praxiskurs für Anfänger
-      <br>nur 12,99
-    </a>
+    <nav id="course-filter" class="course-filter" aria-label="Kategorien"></nav>
+    <div id="courses"></div>
+    <noscript>
+      <p class="noscript">Bitte JavaScript aktivieren, um die Kursliste zu sehen.</p>
+    </noscript>
   </div>
 
   <div id="hashtag">
     IT-Kurse zum Vorzugspreis
   </div>
+<script src="courses.js"></script>
+<script src="app.js"></script>
 <script>
 (function () {
-
-function openConsentSettingsLocal() {
-  const overlay = document.getElementById("consent-overlay");
-  overlay.style.display = "flex";
-  document.body.classList.add("no-scroll");
-
-  // Automatisch ins Zentrum scrollen
-  overlay.scrollIntoView({ behavior: "smooth", block: "center" });
-}
-
-// Globale Funktion
-window.openConsentSettings = openConsentSettingsLocal;
-
-  
-  function revokeTrackingLocal() {
-    localStorage.removeItem("trackingConsent");
-    window.goatcounter = undefined;
-    const existingScript = document.querySelector('script[data-goatcounter]');
-    if (existingScript) existingScript.remove();
-    openConsentSettingsLocal();
-  }
+  var bar = document.getElementById("consent-bar");
 
   function loadGoatCounter() {
     if (window.goatLoaded) return;
     window.goatLoaded = true;
 
-    const script = document.createElement("script");
+    var script = document.createElement("script");
     script.src = "//gc.zgo.at/count.js";
     script.async = true;
     script.setAttribute("data-goatcounter", "https://devopslernen.goatcounter.com/count");
     document.body.appendChild(script);
   }
 
-  function hideBanner() {
-    const overlay = document.getElementById("consent-overlay");
-    overlay.style.display = "none";
-    document.body.classList.remove("no-scroll");
+  function showBar() {
+    bar.hidden = false;
+    document.body.classList.add("has-consent-bar");
   }
 
-  // Globale Funktionen bereitstellen
-  window.openConsentSettings = openConsentSettingsLocal;
-  window.revokeTracking = revokeTrackingLocal;
+  function hideBar() {
+    bar.hidden = true;
+    document.body.classList.remove("has-consent-bar");
+  }
+
+  window.openConsentSettings = showBar;
   window.acceptTracking = function () {
     localStorage.setItem("trackingConsent", "accepted");
-    hideBanner();
+    hideBar();
     loadGoatCounter();
   };
   window.declineTracking = function () {
     localStorage.setItem("trackingConsent", "declined");
-    hideBanner();
+    hideBar();
   };
 
-  document.addEventListener("DOMContentLoaded", function () {
-    const consent = localStorage.getItem("trackingConsent");
-    const overlay = document.getElementById("consent-overlay");
-
-    if (consent === "accepted") {
-      loadGoatCounter();
-      overlay.style.display = "none";
-      document.body.classList.remove("no-scroll");
-      return;
-    }
-
-    if (consent === "declined") {
-      overlay.style.display = "none";
-      document.body.classList.remove("no-scroll");
-      return;
-    }
-
-    // Keine Entscheidung → Banner zeigen
-    overlay.style.display = "flex";
-    document.body.classList.add("no-scroll");
-  });
-
+  var consent = localStorage.getItem("trackingConsent");
+  if (consent === "accepted") loadGoatCounter();
+  else if (consent !== "declined") showBar();
 })();
-
 </script>
 <div class="footer-legal">
   <a href="dataprotection.html" target="_blank" class="legal-button">
