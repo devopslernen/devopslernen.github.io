@@ -6,6 +6,7 @@
 
   var T = SHOP.text;
   var money = new Intl.NumberFormat(SHOP.locale, { style: "currency", currency: SHOP.currency });
+  var percent = new Intl.NumberFormat(SHOP.locale, { style: "percent" });
 
   function el(tag, cls, text) {
     var e = document.createElement(tag);
@@ -20,7 +21,8 @@
 
   function track(path, title) {
     if (window.goatcounter && window.goatcounter.count) {
-      window.goatcounter.count({ path: path, title: title, event: true });
+      // Sprache voranstellen: DE- und EN-Seite zaehlen in dasselbe GoatCounter-Konto
+      window.goatcounter.count({ path: document.documentElement.lang + "/" + path, title: title, event: true });
     }
   }
 
@@ -54,7 +56,7 @@
       var list = c.listPrice || SHOP.listPrice;
       price.appendChild(el("s", "price-old", money.format(list)));
       price.appendChild(el("strong", "price-now", money.format(SHOP.price)));
-      price.appendChild(el("span", "price-off", "−" + Math.round((1 - SHOP.price / list) * 100) + " %"));
+      price.appendChild(el("span", "price-off", percent.format(Math.round((SHOP.price / list - 1) * 100) / 100).replace("-", "−")));
     }
     body.appendChild(price);
     a.appendChild(body);
@@ -94,7 +96,10 @@
 
   function select(catId, scroll) {
     Array.prototype.forEach.call(filterBar.children, function (b) {
-      b.setAttribute("aria-pressed", b.dataset.cat === (catId || "") ? "true" : "false");
+      var active = b.dataset.cat === (catId || "");
+      b.setAttribute("aria-pressed", active ? "true" : "false");
+      // Mobil scrollt die Leiste horizontal: aktiven Filter sichtbar machen
+      if (active) filterBar.scrollLeft = b.offsetLeft - filterBar.offsetLeft - 10;
     });
     render(catId);
     // Kategorie in der URL merken -> teilbare Links wie ?kat=linux
