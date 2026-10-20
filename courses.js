@@ -5,7 +5,7 @@
 
 var SHOP = {
   // Aktueller Udemy-Gutscheincode – wird an alle Kurs-Links angehängt
-  coupon: "LINK-2026-09",
+  coupon: "LINK-2026-10",
 
   // Gutscheinpreis
   price: 12.99,
@@ -39,9 +39,9 @@ var SHOP = {
   // Reihenfolge = Reihenfolge auf der Seite; hint = kleiner Text unter dem Namen
   categories: [
     { id: "virtualisierung", label: "Virtualisierung", hint: "Proxmox · Hyper-V" },
-    { id: "automatisierung", label: "Automatisierung & DevOps", hint: "Ansible · Docker · Git" },
+    { id: "automatisierung", label: "Automatisierung & DevOps", hint: "Ansible · Terraform · Docker" },
     { id: "netzwerk", label: "Netzwerk & Tools", hint: "FortiGate · Jira" },
-    { id: "ki", label: "KI (Claude/Codex)", hint: "Agentic Engineering · Admin" },
+    { id: "ki", label: "KI", hint: "Claude Code · Codex · lokale LLMs" },
     { id: "windows", label: "Windows & Microsoft", hint: "Server · PowerShell · Azure" },
     { id: "linux", label: "Linux", hint: "Ubuntu · Debian · RHEL · Security" }
   ],
@@ -59,6 +59,21 @@ var SHOP = {
      listPrice  optional: abweichender Ankerpreis */
   // Reihenfolge: neue Kurse zuerst, dann Gratis, dann nach Verkaeufen (Stand 10/2026)
   courses: [
+    {
+      slug: "lokale-ki",
+      title: "Lokale KI mit Ollama & Open WebUI: Die eigene KI betreiben",
+      img: "lokale-ki-thumbnail-de-sq.png", cats: ["ki"], isNew: true
+    },
+    {
+      slug: "proxmox-datacenter-manager-next-level-proxmox-verwaltung",
+      title: "Proxmox Datacenter Manager: Next-Level Proxmox-Verwaltung",
+      img: "pdm-thumbnail-server-de-sq.png", cats: ["virtualisierung"], isNew: true
+    },
+    {
+      slug: "terraform-iac-mit-proxmox-und-ansible",
+      title: "Terraform & Infrastructure as Code mit Proxmox und Ansible",
+      img: "terraform-thumbnail-de-sq.png", cats: ["automatisierung", "virtualisierung"], isNew: true
+    },
     {
       slug: "linux-security-hardening-auditing-praxiskurs",
       title: "Linux Security Hardening & Auditing: Praxiskurs",
